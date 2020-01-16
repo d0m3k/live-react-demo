@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // We could/should keep all classes in separate source files for clarity in PROD way of living
@@ -31,7 +30,10 @@ class InputForm extends React.Component {
 class TextHolder extends React.Component {
   constructor() {
     super()
-    this.state = {currentText: '', inputs: JSON.parse(localStorage.getItem('inputs')) || []}
+    this.state = {
+      currentText: '', 
+      inputs: JSON.parse(localStorage.getItem('inputs')) || []
+    }
   }
 
   handleChange = (e) => { // BINDINGS ARE LOL, alternative: this.handleClick = this.handleClick.bind(this); in constructor
