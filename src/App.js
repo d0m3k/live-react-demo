@@ -28,7 +28,7 @@ class InputForm extends React.Component {
   }
 }
 
-class App extends React.Component {
+class TextHolder extends React.Component {
   constructor() {
     super()
     this.state = {currentText: '', inputs: JSON.parse(localStorage.getItem('inputs')) || []}
@@ -51,26 +51,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className='adders'>
         <div className="funnyAdder">
           <InputForm currentText={this.state.currentText} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         </div>
         <div className="inputList">
           <InputList inputs={this.state.inputs}/>
         </div>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
       </div>
-    );
+    )
   }
 }
+
+function App() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <TextHolder/>
+        </header>
+      </div>
+    )
+}
+
 
 export default App;
